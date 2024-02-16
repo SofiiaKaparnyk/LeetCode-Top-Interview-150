@@ -14,7 +14,6 @@ Do not allocate extra space for another array. You must do this by modifying the
 """
 
 
-
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> Tuple[int, List[int]]:
         i = 0
@@ -27,6 +26,10 @@ class Solution:
                 nums.remove(nums[i])
         return len(nums), nums
 
-assert Solution().removeDuplicates([1,1,1,2,2,3]) == (5, [1,1,2,2,3])
-assert Solution().removeDuplicates([0,0,1,1,1,1,2,3,3]) == (7, [0,0,1,1,2,3,3])
-assert Solution().removeDuplicates([1,1,1]) == (2, [1,1])
+
+assert Solution().removeDuplicates([1, 1, 1, 2, 2, 3]) == (5, [1, 1, 2, 2, 3])
+assert Solution().removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3]) == (
+    7,
+    [0, 0, 1, 1, 2, 3, 3],
+)
+assert Solution().removeDuplicates([1, 1, 1]) == (2, [1, 1])

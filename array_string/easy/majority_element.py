@@ -1,4 +1,3 @@
-
 from typing import List
 
 """
@@ -12,9 +11,9 @@ always exists in the array.
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         nums.sort()
-        return nums[len(nums)//2]
+        return nums[len(nums) // 2]
 
 
-assert Solution().majorityElement([3,2,3]) == 3
+assert Solution().majorityElement([3, 2, 3]) == 3
 assert Solution().majorityElement([1]) == 1
-assert Solution().majorityElement([2,2,1,1,1,2,2]) == 2
+assert Solution().majorityElement([2, 2, 1, 1, 1, 2, 2]) == 2
