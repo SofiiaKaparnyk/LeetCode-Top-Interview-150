@@ -6,8 +6,7 @@ needle is not part of haystack.
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        occ = haystack.find(needle)
-        return occ
+        return haystack.find(needle)
 
 
 assert Solution().strStr("sadbutsad", "sad") == 0
