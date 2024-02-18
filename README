@@ -1,12 +1,11 @@
-Description:
-This project aims to comprehensively cover the top 150 interview questions from LeetCode.
-Leveraging the "Top Interview 150" study course, I systematically solve each problem and provide corresponding
-test cases to ensure robustness and correctness of solutions.
+# LeetCode Top 150 Interview Questions Study
 
-Features:
+## Description
+This project aims to comprehensively cover the top 150 interview questions from LeetCode. Leveraging the "Top Interview 150" study course, each problem is systematically solved and corresponding test cases are provided to ensure robustness and correctness of solutions.
 
-Solves the top 150 interview questions from LeetCode.
-Provides solutions to each problem.
-Implements test cases to validate solution correctness.
+## Features
+- Solves the top 150 interview questions from LeetCode.
+- Provides solutions to each problem.
+- Implements test cases to validate solution correctness.
 
-Happy Coding!
+## Happy Coding!
