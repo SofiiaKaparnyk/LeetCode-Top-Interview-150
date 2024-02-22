@@ -1,2 +1,2 @@
 lint:
-	isort . & black .
+	isort . & black --line-length 120 .
