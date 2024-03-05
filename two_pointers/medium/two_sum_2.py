@@ -27,6 +27,7 @@ class Solution:
 
 
 assert Solution().twoSum(numbers=[1, 2, 7, 11, 15], target=9) == [2, 3]
+assert Solution().twoSum(numbers=[1, 2, 7, 11, 15], target=17) == [2, 5]
 assert Solution().twoSum(numbers=[2, 7, 11, 15], target=22) == [2, 4]
 assert Solution().twoSum(numbers=[2, 7, 11, 15], target=26) == [3, 4]
 assert Solution().twoSum(numbers=[2, 3, 4], target=6) == [1, 3]

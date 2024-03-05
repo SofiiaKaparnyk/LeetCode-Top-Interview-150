@@ -26,6 +26,7 @@ class Solution:
 
 
 assert Solution().isSubsequence(s="abc", t="ahbgdc") is True
+assert Solution().isSubsequence(s="aabc", t="ahabgdc") is True
 assert Solution().isSubsequence(s="abc", t="") is False
 assert Solution().isSubsequence(s="aabc", t="ahbgdc") is False
 assert Solution().isSubsequence(s="axc", t="ahbgdc") is False
