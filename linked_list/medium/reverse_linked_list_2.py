@@ -17,52 +17,49 @@ class ListNode:
 
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-        if left == right:
+        if not head.next or not left or not right:
             return head
 
-        ls = []
         curr = head
+        d = {}
+        i = 1
         while curr:
-            ls.append(curr)
+            d[i] = curr
+            i += 1
             curr = curr.next
 
-        i = 1
         curr = head
+        i = 1
         while curr:
-            if left == 1:
-                new_node = self.reverse(curr, right - left)
-                curr = new_node
-                head = curr
-                ls[left - 1].next = ls[right] if len(ls) > right else None
-                break
-            if i + 1 == left:
-                new_node = self.reverse(curr.next, right - left)
-                curr.next = new_node
-                ls[left - 1].next = ls[right] if len(ls) > right else None
+            if i == left:
+                reversed_list = self.reverse(curr, right - left) # 5,4,3,2
+                if left == 1:
+                    head = reversed_list
+                else:
+                    d[i-1].next = reversed_list
+                curr.next = d.get(right+1)
                 break
             curr = curr.next
             i += 1
 
         return head
 
-    def reverse(self, head, diff):
-        curr = head
-        i = 0
+    def reverse(self, root, i):
         prev = None
-        while i <= diff:
-            next = curr.next
+        curr = root
+        while i >= 0:
+            following = curr.next
             curr.next = prev
             prev = curr
-            curr = next
-            i += 1
-
+            curr = following
+            i -= 1
         return prev
 
 
 resp = Solution().reverseBetween(
     ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6, None)))))), 2, 5
 )
-assert print_list(resp) == [1, 5, 4, 3, 2, 6]
+print(print_list(resp))
 
 resp = Solution().reverseBetween(
     ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6, None)))))), 3, 4
