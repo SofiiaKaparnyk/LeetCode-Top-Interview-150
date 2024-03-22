@@ -25,7 +25,23 @@ class Solution:
         return True
 
 
-assert Solution().isSubsequence(s="abc", t="ahbgdc") is True
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        if len(t) < len(s):
+            return False
+
+        i = 0
+        for j in range(len(t)):
+            if s[i] == t[j]:
+                i += 1
+
+            if i == len(s):
+                return True
+
+        return False
+
+
+assert Solution().isSubsequence(s="abc", t="ahbgdck") is True
 assert Solution().isSubsequence(s="aabc", t="ahabgdc") is True
 assert Solution().isSubsequence(s="abc", t="") is False
 assert Solution().isSubsequence(s="aabc", t="ahbgdc") is False

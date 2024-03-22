@@ -1,6 +1,6 @@
-from binary_tree_general.utils import print_tree
-
 from typing import List, Optional
+
+from binary_tree_general.utils import print_tree
 
 """
 Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is
@@ -26,10 +26,10 @@ class Solution:
 
         i = inorder.index(root_val)
         left_trees = inorder[:i]
-        right_trees = inorder[i + 1:]
+        right_trees = inorder[i + 1 :]
 
-        left_preorder_trees = preorder[1:i + 1]
-        right_preorder_trees = preorder[i + 1:]
+        left_preorder_trees = preorder[1 : i + 1]
+        right_preorder_trees = preorder[i + 1 :]
 
         root.left = self.buildTree(left_preorder_trees, left_trees)
         root.right = self.buildTree(right_preorder_trees, right_trees)
@@ -37,7 +37,7 @@ class Solution:
         return root
 
 
-sol = Solution().buildTree(preorder = [3,9,20,15,7], inorder = [9,3,15,20,7])
+sol = Solution().buildTree(preorder=[3, 9, 20, 15, 7], inorder=[9, 3, 15, 20, 7])
 print_tree(sol)
 
 sol = Solution().buildTree(preorder=[5, 3, 2, 4, 8, 6, 7, 10, 9, 11], inorder=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11])

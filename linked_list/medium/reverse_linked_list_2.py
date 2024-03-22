@@ -32,12 +32,12 @@ class Solution:
         i = 1
         while curr:
             if i == left:
-                reversed_list = self.reverse(curr, right - left) # 5,4,3,2
+                reversed_list = self.reverse(curr, right - left)  # 5,4,3,2
                 if left == 1:
                     head = reversed_list
                 else:
-                    d[i-1].next = reversed_list
-                curr.next = d.get(right+1)
+                    d[i - 1].next = reversed_list
+                curr.next = d.get(right + 1)
                 break
             curr = curr.next
             i += 1

@@ -9,20 +9,25 @@ and return an array of the non-overlapping intervals that cover all the interval
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        new_int = []
+        if len(intervals) < 2:
+            return intervals
+
         intervals.sort(key=lambda x: x[0])
-        start = intervals[0][0]
-        end = intervals[0][1]
-        for i in range(len(intervals)):
-            if i == len(intervals) - 1 or end < intervals[i + 1][0]:
-                new_int.append([start, end])
-                if i != len(intervals) - 1:
-                    start = intervals[i + 1][0]
-                    end = intervals[i + 1][1]
+
+        new_interval = [intervals[0]]
+        for interval in intervals:
+            prev0 = new_interval[-1][0]
+            prev1 = new_interval[-1][1]
+
+            curr0 = interval[0]
+            curr1 = interval[1]
+
+            if prev1 >= curr0:
+                new_interval[-1] = [min(prev0, curr0), max(prev1, curr1)]
             else:
-                end = max(end, intervals[i + 1][1])
-                start = min(start, intervals[i + 1][0])
-        return new_int
+                new_interval.append(interval)
+
+        return new_interval
 
 
 assert Solution().merge(intervals=[[1, 3], [2, 6], [8, 10], [15, 18]]) == [[1, 6], [8, 10], [15, 18]]
